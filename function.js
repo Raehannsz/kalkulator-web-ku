@@ -66,16 +66,10 @@ function calculate() {
   }
 }
 
-function addToHistory(expression, result) {
-  const historyList = document.getElementById("history-list");
-  const entry = document.createElement("button");
-  entry.className = "history-entry block w-full text-left py-1 px-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700";
-  entry.textContent = `${expression} = ${result}`;
-  entry.onclick = () => {
-    display.innerText = expression;
-  };
-  const li = document.createElement("li");
-  li.appendChild(entry);
-  historyList.prepend(li);
-}
+function resetHistory() {
+    const historyList = document.getElementById("history-list");
+    historyList.innerHTML = '';
+    display.innerText = '0';
+  }
+
 
