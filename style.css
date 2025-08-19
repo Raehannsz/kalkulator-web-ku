@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
+
+:root {
+  --bg-color: #f4f4f4;
+  --calc-bg: #fff;
+  --display-bg: #eee;
+  --text-color: #000;
+  --button-bg: #ddd;
+  --button-text: #000;
+  --operator-bg: #ffa94d;
+  --equal-bg: #228be6;
+}
+
+.dark-theme {
+  --bg-color: #1e1e1e;
+  --calc-bg: #222;
+  --display-bg: #000;
+  --text-color: #fe9241;
+  --button-bg: #444;
+  --button-text: #fff;
+  --operator-bg: #fe9241;
+  --equal-bg: #0a84ff;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 20px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+  flex-wrap: wrap;
+}
+
+.calculator {
+  background: var(--calc-bg);
+  padding: 20px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  color: var(--text-color);
+}
+
+.display {
+  background: var(--display-bg);
+  color: var(--text-color);
+  font-size: 2em;
+  padding: 10px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: right;
+  min-width: 240px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 20px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button.operator {
+  background: var(--operator-bg);
+}
+
+button.equal {
+  background: var(--equal-bg);
+  color: #fff;
+}
+
+#del {
+  padding: 1px;
+  background-color: maroon;
+  color: #fff;
+}
+
+.theme-toggle {
+  position: relative;
+  top: 20px;
+  right: 20px;
+  text-align: right;
+}
+
+.theme-toggle button {
+  padding: 10px 15px;
+  background-color: #0a84ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.theme-toggle button:hover {
+  background-color: #0056b3;
+}
+
+.history {
+  width: 100%; /* Sama panjang dengan kalkulator */
+  max-width: 280px; /* Sesuaikan dengan lebar kalkulator */
+  margin-left: 30px;
+  max-height: 500px;
+  overflow-y: auto;
+  align-items: center;
+  background-color: var(--calc-bg);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+}
+
+.history h3 {
+  margin-top: 0;
+}
+
+/* Hapus bullet dan tambahkan angka */
+#history-list {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: history-counter;
+}
+
+#reset-history {
+  font-size: 15px;
+  text-align: center;
+  align-items: center;
+  display: block;
+  margin-top: 10px;
+  padding: 7px;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.history-entry {
+  font-size: 1em;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  counter-increment: history-counter;
+  position: relative;
+  padding-left: 30px;
+}
+
+.history-entry::before {
+  content: counter(history-counter) ". ";
+  position: absolute;
+  left: 0;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+/* Batasi lebar kalkulator agar konsisten */
+.calculator {
+  max-width: 280px;
+  width: 100%;
+}
+
+/* Sesuaikan history agar sejajar */
+.history {
+  max-width: 280px;
+  width: 100%;
+  max-height: 500px;
+  overflow-y: auto;
+  background-color: var(--calc-bg);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .calculator,
+  .history {
+    max-width: 90vw;
+    width: 100%;
+    margin: 0 auto;               /* Pastikan di tengah */
+  }
+
+  .history {
+    margin-top: 20px;             /* Beri jarak dari kalkulator */
+    text-align: left;             /* Tetap rata kiri isi riwayat */
+  }
+
+  .theme-toggle button {
+    position: static;
+  }
+
+  .buttons {
+    grid-template-columns: repeat(4, 1fr); /* Gunakan proporsi fleksibel */
+  }
+}
+
