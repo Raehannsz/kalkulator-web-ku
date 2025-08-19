@@ -71,5 +71,3 @@ function resetHistory() {
     historyList.innerHTML = '';
     display.innerText = '0';
   }
-
-
