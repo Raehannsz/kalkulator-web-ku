@@ -72,7 +72,7 @@ button {
   background: var(--button-bg);
   color: var(--button-text);
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
 button.operator {
@@ -90,31 +90,11 @@ button.equal {
   color: #fff;
 }
 
-.theme-toggle {
-  position: relative;
-  top: 20px;
-  right: 20px;
-  text-align: right;
-}
-
-.theme-toggle button {
-  padding: 10px 15px;
-  background-color: #0a84ff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.theme-toggle button:hover {
-  background-color: #0056b3;
+body.dark-theme {
+  background-color: #333;
 }
 
 .history {
-  width: 100%; /* Sama panjang dengan kalkulator */
-  max-width: 280px; /* Sesuaikan dengan lebar kalkulator */
-  margin-left: 30px;
-  max-height: 500px;
   overflow-y: auto;
   align-items: center;
   background-color: var(--calc-bg);
@@ -147,6 +127,27 @@ button.equal {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+#reset-history:hover {
+  background-color: #ff4d4d;
+  box-shadow: 0 0 10px 2px #ff4d4d, 0 0 20px 4px #ff4d4d66;
+}
+
+button:hover, button:focus {
+  box-shadow: 0 0 10px 2px var(--button-bg), 0 0 20px 4px var(--button-bg);
+}
+
+button.operator:hover, button.operator:focus {
+  box-shadow: 0 0 10px 2px var(--operator-bg), 0 0 20px 4px var(--operator-bg);
+}
+
+button.equal:hover, button.equal:focus {
+  box-shadow: 0 0 10px 2px var(--equal-bg), 0 0 20px 4px var(--equal-bg);
+}
+
+#del:hover, #del:focus {
+  box-shadow: 0 0 10px 2px maroon, 0 0 20px 4px #80000088;
 }
 
 .history-entry {
@@ -213,4 +214,3 @@ button.equal {
     grid-template-columns: repeat(4, 1fr); /* Gunakan proporsi fleksibel */
   }
 }
-
