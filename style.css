@@ -49,12 +49,26 @@ body {
   background: var(--display-bg);
   color: var(--text-color);
   font-size: 2em;
-  padding: 10px 10px;
+  padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;
   text-align: right;
-  min-width: 240px;
+  min-width: 200px;
+  max-width: 100%;
+
+  /* NEW: allow text to wrap */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+
+  /* Make sure it can grow vertically */
+  max-height: 150px;
+  overflow-y: auto;
+
+  font-family: monospace;
+  display: block;
 }
+
 
 .buttons {
   display: grid;
