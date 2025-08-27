@@ -41,8 +41,22 @@ body {
   background: var(--calc-bg);
   padding: 20px 15px;
   border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   color: var(--text-color);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row; /* supaya kalkulator dan history sejajar */
+  justify-content: center; /* supaya kalkulator dan history di tengah */
+  align-items: flex-start; /* supaya kalkulator dan history di tengah */
+  width: 100%;
+  gap: 30px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .display {
@@ -114,6 +128,9 @@ body.dark-theme {
   background-color: var(--calc-bg);
   border-radius: 10px;
   padding: 15px;
+  max-width: 400px;
+  width: 100%;
+  max-height: 500px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   color: var(--text-color);
 }
@@ -200,9 +217,48 @@ button.equal:hover, button.equal:focus {
   color: var(--text-color);
 }
 
+/* Button untuk expand fungsi */
+.advanced-toggle-wrapper {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.toggle-button {
+  background-color: skyblue;
+  border: none;
+  padding: 6px 12px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  transition: background-color 0.2s;
+}
+
+.toggle-button:hover {
+  background-color: #cbd5e0;
+}
+
+.advanced {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.hidden {
+  display: none;
+}
+/* tutup Button untuk expand fungsi */
+
 /* Responsif untuk mobile */
 @media (max-width: 768px) {
   body {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .main-container {
     flex-direction: column;
     align-items: center;
     height: auto;
