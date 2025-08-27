@@ -96,7 +96,9 @@ function resizeDisplayText() {
     display.style.fontSize = fontSize + "px";
   }
 }
+// END Fungsi untuk menyesuaikan ukuran font pada display
 
+// Fungsi ilmiah
 function squareRoot() {
   try {
     const value = parseFloat(display.innerText);
@@ -133,3 +135,16 @@ function cube() {
 function power() {
   display.innerText += "**";
 }
+// END Fungsi ilmiah
+
+// Toggle panel fungsi ilmiah
+const toggleBtnAdvanced = document.getElementById("toggleAdvanced");
+const advancedPanel = document.getElementById("advancedFunctions");
+
+toggleBtnAdvanced.addEventListener("click", () => {
+  advancedPanel.classList.toggle("hidden");
+
+  const isOpen = !advancedPanel.classList.contains("hidden");
+  toggleBtnAdvanced.innerText = isOpen ? "Hide ▲" : "Expand ▼";
+});
+// END Toggle panel fungsi ilmiah
