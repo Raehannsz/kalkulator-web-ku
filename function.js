@@ -97,3 +97,39 @@ function resizeDisplayText() {
   }
 }
 
+function squareRoot() {
+  try {
+    const value = parseFloat(display.innerText);
+    const result = Math.sqrt(value);
+    display.innerText = result;
+    addToHistory(`√(${value})`, result);
+  } catch {
+    display.innerText = "Error";
+  }
+}
+
+function square() {
+  try {
+    const value = parseFloat(display.innerText);
+    const result = Math.pow(value, 2);
+    display.innerText = result;
+    addToHistory(`${value}²`, result);
+  } catch {
+    display.innerText = "Error";
+  }
+}
+
+function cube() {
+  try {
+    const value = parseFloat(display.innerText);
+    const result = Math.pow(value, 3);
+    display.innerText = result;
+    addToHistory(`${value}³`, result);
+  } catch {
+    display.innerText = "Error";
+  }
+}
+
+function power() {
+  display.innerText += "**";
+}
