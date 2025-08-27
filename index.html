@@ -51,48 +51,56 @@
       </div>
     </div>
 
-<div class="calculator" id="calculator">
-    <div class="display" id="display">0</div>
-    <div class="buttons">
-      <!-- Fungsi baru -->
-      <button onclick="squareRoot()">√</button>
+<div class="main-container">
+      <div class="calculator" id="calculator">
+        <div class="display" id="display">0</div>
+      <div class="advanced-toggle-wrapper">
+    <button id="toggleAdvanced" class="toggle-button">Expand ▼</button>
+    
+    <div id="advancedFunctions" class="advanced hidden">
+      <button onclick="squareRoot()"><b>√</b></button>
       <button onclick="square()">x²</button>
       <button onclick="cube()">x³</button>
       <button onclick="power()">xʸ</button>
-
-      <button onclick="clearDisplay()">C</button>
-      <button onclick="appendValue('(')">(</button>
-      <button onclick="appendValue(')')">)</button>
-      <button class="operator" onclick="appendValue('/')">÷</button>
-  
-      <button onclick="appendValue('7')">7</button>
-      <button onclick="appendValue('8')">8</button>
-      <button onclick="appendValue('9')">9</button>
-      <button class="operator" onclick="appendValue('*')">×</button>
-  
-      <button onclick="appendValue('4')">4</button>
-      <button onclick="appendValue('5')">5</button>
-      <button onclick="appendValue('6')">6</button>
-      <button class="operator" onclick="appendValue('-')">−</button>
-  
-      <button onclick="appendValue('1')">1</button>
-      <button onclick="appendValue('2')">2</button>
-      <button onclick="appendValue('3')">3</button>
-      <button class="operator" onclick="appendValue('+')">+</button>
-  
-      <button onclick="appendValue('0')">0</button>
-      <button onclick="appendValue('.')">.</button>
-      <button id="del" onclick="deleteLast()">DEL</button>
-      <button class="equal" onclick="calculate()">=</button>
+      <!-- Tambahan lain seperti log, sin, cos bisa ditambahkan nanti -->
     </div>
-</div>
+  </div>
 
-<div class="history" id="history">
-  <h3>Riwayat</h3>
-  <ul id="history-list"></ul>
-  <button onclick="resetHistory()" id="reset-history">Reset History</button>
-</div>
+      <div class="buttons">
 
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="appendValue('(')">(</button>
+        <button onclick="appendValue(')')">)</button>
+        <button class="operator" onclick="appendValue('/')">÷</button>
+    
+        <button onclick="appendValue('7')">7</button>
+        <button onclick="appendValue('8')">8</button>
+        <button onclick="appendValue('9')">9</button>
+        <button class="operator" onclick="appendValue('*')">×</button>
+    
+        <button onclick="appendValue('4')">4</button>
+        <button onclick="appendValue('5')">5</button>
+        <button onclick="appendValue('6')">6</button>
+        <button class="operator" onclick="appendValue('-')">−</button>
+    
+        <button onclick="appendValue('1')">1</button>
+        <button onclick="appendValue('2')">2</button>
+        <button onclick="appendValue('3')">3</button>
+        <button class="operator" onclick="appendValue('+')">+</button>
+    
+        <button onclick="appendValue('0')">0</button>
+        <button onclick="appendValue('.')">.</button>
+        <button id="del" onclick="deleteLast()">DEL</button>
+        <button class="equal" onclick="calculate()">=</button>
+      </div>
+  </div>
+
+  <div class="history" id="history">
+    <h3>Riwayat</h3>
+    <ul id="history-list"></ul>
+    <button onclick="resetHistory()" id="reset-history">Reset History</button>
+  </div>
+</div>
 
 <script src="function.js"></script>
 
