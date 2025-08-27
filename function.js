@@ -137,7 +137,7 @@ function power() {
 }
 // END Fungsi ilmiah
 
-// Toggle panel fungsi ilmiah
+// Toggle panel fungsi ilmiahh
 const toggleBtnAdvanced = document.getElementById("toggleAdvanced");
 const advancedPanel = document.getElementById("advancedFunctions");
 
@@ -148,3 +148,4 @@ toggleBtnAdvanced.addEventListener("click", () => {
   toggleBtnAdvanced.innerText = isOpen ? "Hide ▲" : "Expand ▼";
 });
 // END Toggle panel fungsi ilmiah
+
