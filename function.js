@@ -42,6 +42,7 @@ function appendValue(val) {
       display.innerText = '0';
     }
   }
+  
 
   // Fungsi untuk mengubah tema
   const toggleBtn = document.getElementById("themeToggleBtn");
@@ -63,7 +64,8 @@ function appendValue(val) {
     }
   });
 
-  function addToHistory(expression, result) {
+  // Fungsi untuk menambahkan data ke riwayat
+function addToHistory(expression, result) {
   const historyList = document.getElementById("history-list");
   const entry = document.createElement("li");
   entry.className = "history-entry";
@@ -71,6 +73,7 @@ function appendValue(val) {
   historyList.prepend(entry);
 }
 
+// Fungsi untuk menghapus riwayat
 function resetHistory() {
   if (confirm("Yakin ingin menghapus riwayat?")) {
     const historyList = document.getElementById("history-list");
@@ -78,3 +81,19 @@ function resetHistory() {
     display.innerText = '0';
   }
 }
+
+// Fungsi untuk menyesuaikan ukuran font pada display
+function resizeDisplayText() {
+  const maxFontSize = 32;
+  const minFontSize = 12;
+  const display = document.getElementById("display");
+
+  let fontSize = maxFontSize;
+  display.style.fontSize = fontSize + "px";
+
+  while (display.scrollWidth > display.clientWidth && fontSize > minFontSize) {
+    fontSize -= 1;
+    display.style.fontSize = fontSize + "px";
+  }
+}
+
